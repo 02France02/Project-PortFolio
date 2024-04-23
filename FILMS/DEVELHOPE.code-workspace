@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"name": "DEVELHOPE",
+			"path": "../../../DEVELHOPE"
+		},
+		{
+			"name": "ELECTRONIC ARTS",
+			"path": "../../../ELECTRONIC ARTS"
+		},
+		{
+			"name": "PROGETTI CODE",
+			"path": "../.."
+		},
+		{
+			"name": "CHECKPOINT",
+			"path": "../../../DEVELHOPE/CHECKPOINT"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "PROGETTI CODE"
+	}
+}
