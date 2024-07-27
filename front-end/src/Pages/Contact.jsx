@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <>
       <section className="body-font relative bg-gray-900 text-gray-400">
-        <div className="container mx-auto px-5 py-24" data-aos="fade-up">
+        <div className="container mx-auto  py-24" data-aos="fade-up">
           <div className="mb-12 flex w-full flex-col text-center">
             <h1 className="title-font mb-4 text-2xl font-medium text-white sm:text-3xl">
               CONTATTAMI
