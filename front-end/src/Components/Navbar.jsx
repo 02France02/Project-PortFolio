@@ -93,7 +93,7 @@ export default function Example() {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <DisclosurePanel className="sm:hidden absolute w-full bg-[#1F2937] ">
+            <DisclosurePanel className="sm:hidden  ">
               <div className="space-y-1 px-2 pb-3 pt-2 ">
                 {navigation.map((item) => (
                   <Link
