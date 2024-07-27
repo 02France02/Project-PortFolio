@@ -87,6 +87,7 @@ export default function Example() {
               {navigation.map((item) => (
                 <DisclosureButton
                   key={item.name}
+                  as="Link"
                   href={item.href}
                   className={classNames(
                     item.current
