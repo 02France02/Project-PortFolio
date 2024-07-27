@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import video_project from "../assets/video_project.mp4";
 import video_Bycycle from "../assets/bycycleFast.mp4";
 import img_Bycycle from "../assets/by_img.png";
@@ -10,6 +12,13 @@ import video_pex_mobile from "../assets/pexelcrew_mobile_video.mp4";
 import video_pex_desk from "../assets/pexel_desk_video.mp4";
 
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Durata delle animazioni in millisecondi
+      once: true, // Le animazioni si verificano solo una volta
+      offset: 100, // Offset dal viewport per iniziare l'animazione
+    });
+  }, []);
   return (
     <>
       <div>
@@ -23,7 +32,7 @@ const Projects = () => {
           ></video>
 
           {/* ByCycle */}
-          <div className="z-10">
+          <div className="z-10" data-aos="fade-in">
             <div className="z-10 text-center">
               <h2 className="text-2xl font-bold text-white underline">
                 ByCycle
@@ -58,7 +67,7 @@ const Projects = () => {
           </div>
 
           {/* EA Copia */}
-          <div className="z-10">
+          <div className="z-10" data-aos="fade-in">
             <div className="z-10 text-center">
               <h2 className="text-2xl font-bold text-white underline">
                 Copia Electronics Art
@@ -99,7 +108,7 @@ const Projects = () => {
           </div>
 
           {/* Landing page */}
-          <div className="z-10">
+          <div className="z-10" data-aos="fade-in">
             <div className="z-10 text-center">
               <h2 className="text-2xl font-bold text-white underline">
                 Landing Page React
@@ -134,7 +143,7 @@ const Projects = () => {
           </div>
 
           {/* Landing page Vanilla*/}
-          <div className="z-10">
+          <div className="z-10" data-aos="fade-in">
             <div className="z-10 text-center">
               <h2 className="text-2xl font-bold text-white underline">
                 Landing Page Vanilla

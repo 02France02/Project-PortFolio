@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import webApp_img from "../assets/webapp.jpg";
 import Button from "../Components/Button";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Service = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Durata delle animazioni in millisecondi
+      once: true, // Le animazioni si verificano solo una volta
+      offset: 100, // Offset dal viewport per iniziare l'animazione
+    });
+  }, []);
   return (
     <>
       <div>
@@ -15,7 +24,7 @@ const Service = () => {
           {/* Start servizi */}
           {/* Sito web */}
           <div className=" relative z-10  p-10">
-            <div className="bg-green-950/70 rounded-3xl p-3 w-1/2 max-md:w-full">
+            <div className="bg-green-950/70 rounded-3xl p-3 w-1/2 max-md:w-full" data-aos="fade-right" data-aos-delay="100">
               <h2 className="flex z-10 lg:text-2xl font-bold mb-4 max-sm:text-base sm:text-xl ">
                 Realizzo il Tuo Sito Web
                 <svg
@@ -64,7 +73,7 @@ const Service = () => {
           </div>
           {/* Web App */}
           <div className="flex justify-end relative z-10  p-10">
-            <div className=" bg-slate-900/70 rounded-3xl p-3 w-1/2 max-md:w-full">
+            <div className=" bg-slate-900/70 rounded-3xl p-3 w-1/2 max-md:w-full" data-aos="fade-left" data-aos-delay="500">
               <h2 className="flex z-10 lg:text-2xl font-bold mb-4 max-sm:text-base sm:text-xl ">
                 Realizzo la Tua Web App
                 <svg
@@ -113,7 +122,7 @@ const Service = () => {
           </div>
           {/* Social */}
           <div className=" relative z-10  p-10 ">
-            <div className=" bg-red-950/70 rounded-3xl p-3 w-1/2 max-md:w-full">
+            <div className=" bg-red-950/70 rounded-3xl p-3 w-1/2 max-md:w-full" data-aos="fade-right" data-aos-delay="1000">
               <h2 className="flex z-10 lg:text-2xl font-bold mb-4 max-sm:text-base sm:text-xl ">
                 Gestisco i Tuoi Social
                 <svg
@@ -150,7 +159,7 @@ const Service = () => {
         {/* Contattami */}
         <div className="relative flex items-center justify-center ">
           <div className="absolute inset-0 image_home1"></div>
-          <div className="relative z-10  bg-opacity-60 p-[6%] rounded-lg text-center flex flex-col items-center gap-5">
+          <div className="relative z-10  bg-opacity-60 p-[6%] rounded-lg text-center flex flex-col items-center gap-5" data-aos="fade-in" >
             <h2 className="font-extrabold text-2xl max-xs:text-xl underline">
               ANCORA INDECIS@?
             </h2>

@@ -6,16 +6,18 @@ import {
   MenuButton,
   MenuItem,
   MenuItems,
+  Transition,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import logoFra from "../../public/logo_fra_nobg.png";
+import { Fragment } from "react";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "About", href: "/about", current: false },
   { name: "Progetti", href: "/projects", current: false },
-  { name: "Servizi", href: "service", current: false },
+  { name: "Servizi", href: "/service", current: false },
 ];
 
 function classNames(...classes) {
@@ -56,7 +58,7 @@ export default function Example() {
                         key={item.name}
                         to={item.href}
                         className={classNames(
-                          item.current
+                          location.pathname === item.href
                             ? "bg-gray-900 text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
                           "rounded-md px-3 py-2 text-xs font-medium"
@@ -82,25 +84,35 @@ export default function Example() {
             </div>
           </div>
           {/* mobile navbar */}
-          <DisclosurePanel className="sm:hidden absolute w-full bg-[#1F2937]">
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-xs font-medium "
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </DisclosurePanel>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-200 transform"
+            enterFrom="opacity-0 scale-95"
+            enterTo="opacity-100 scale-100"
+            leave="transition ease-in duration-150 transform"
+            leaveFrom="opacity-100 scale-100"
+            leaveTo="opacity-0 scale-95"
+          >
+            <DisclosurePanel className="sm:hidden absolute w-full bg-[#1F2937] ">
+              <div className="space-y-1 px-2 pb-3 pt-2 ">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={classNames(
+                      item.current
+                        ? "bg-gray-900 text-white"
+                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      "block rounded-md px-3 py-2 text-xs font-medium "
+                    )}
+                    aria-current={item.current ? "page" : undefined}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </DisclosurePanel>
+          </Transition>
         </>
       )}
     </Disclosure>
