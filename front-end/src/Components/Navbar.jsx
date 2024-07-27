@@ -85,10 +85,9 @@ export default function Example() {
           <DisclosurePanel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
-                <DisclosureButton
+                <Link
                   key={item.name}
-                  as="a"
-                  href={item.href}
+                  to={item.href}
                   className={classNames(
                     item.current
                       ? "bg-gray-900 text-white"
@@ -98,7 +97,7 @@ export default function Example() {
                   aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
-                </DisclosureButton>
+                </Link>
               ))}
             </div>
           </DisclosurePanel>
