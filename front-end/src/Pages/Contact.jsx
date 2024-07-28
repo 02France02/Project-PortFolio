@@ -27,7 +27,7 @@ const Contact = () => {
           </div>
 
           <div className="mx-auto md:w-2/3 lg:w-1/2">
-            <div className="-m-2 flex flex-wrap">
+            <div className="-m-2 flex flex-wrap ">
               {/* Form */}
               <div className="w-1/2 p-2">
                 <div className="relative">

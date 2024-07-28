@@ -17,13 +17,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 .image_home1::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/src/assets/digital-1742687_1280.jpg');
+  background-image: url("/src/assets/digital-1742687_1280.jpg");
   background-size: cover;
   background-position: center;
   filter: blur(7px);
 }
-

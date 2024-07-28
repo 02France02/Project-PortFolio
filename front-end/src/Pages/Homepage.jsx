@@ -62,7 +62,7 @@ const Homepage = () => {
         </div>
 
         {/* Info tecnology */}
-        <div className="video_tech relative flex justify-center p-[7%]" data-aos="fade-up">
+        <div className="video_tech relative flex justify-center p-[7%] overflow-x-hidden" data-aos="fade-up">
           <video
             src={code_video}
             className="z-0 absolute inset-0 w-full h-full object-cover blur-sm"
@@ -79,7 +79,7 @@ const Homepage = () => {
             {/* Start 3 div */}
 
             {/* react */}
-            <div className="z-10 w-full mt-10 flex flex-wrap justify-center" data-aos="fade-right">
+            <div className="z-10 w-full mt-10 flex flex-wrap justify-center " data-aos="fade-right" >
               <div className="w-full md:w-1/2 mb-4 md:mb-0">
                 <h1 className="font-extrabold text-white sm:text-xl">
                   REACT per interfacce utente dinamiche e interattive
@@ -95,7 +95,7 @@ const Homepage = () => {
             </div>
 
             {/* js */}
-            <div className="z-10 w-full mt-10 flex flex-wrap justify-center" data-aos="fade-left">
+            <div className="z-10 w-full mt-10 flex flex-wrap justify-center " data-aos="fade-left" >
               <div className="w-full md:w-1/2 mb-4 md:mb-0">
                 <h1 className="font-extrabold text-white sm:text-xl">
                   JAVASCRIPT per la Logica e Dinamicità
@@ -111,7 +111,7 @@ const Homepage = () => {
             </div>
 
             {/* node */}
-            <div className="z-10 w-full mt-10 flex flex-wrap justify-center" data-aos="fade-right">
+            <div className="z-10 w-full mt-10 flex flex-wrap justify-center " data-aos="fade-right">
               <div className="w-full md:w-1/2 mb-4 md:mb-0">
                 <h1 className="font-extrabold text-white sm:text-xl">
                   NODE.js per interfacce utente dinamiche e interattive

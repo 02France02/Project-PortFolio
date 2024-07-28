@@ -45,11 +45,13 @@ export default function Example() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="h-12 w-auto rounded-full max-xxs:hidden"
-                    src={logoFra}
-                    alt="Your Company"
-                  />
+                  <Link to="/">
+                    <img
+                      className="h-12 w-auto rounded-full max-xxs:hidden"
+                      src={logoFra}
+                      alt="Your Company"
+                    />
+                  </Link>
                 </div>
                 <div className="hidden sm:flex sm:flex-1 sm:justify-center items-center">
                   <div className="flex space-x-4">

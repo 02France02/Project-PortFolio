@@ -17,7 +17,7 @@ const About = () => {
   return (
     <>
       <div>
-        <div className="relative py-16 px-8 sm:px-16 flex flex-col sm:flex-row items-center sm:items-center sm:justify-center">
+        <div className="relative py-16 px-8 sm:px-16 flex flex-col sm:flex-row items-center sm:items-center sm:justify-center overflow-x-hidden">
           <video
             src={code_video}
             className="z-0 absolute inset-0 w-full h-full object-cover blur-sm"
@@ -66,24 +66,21 @@ const About = () => {
 
         <div>
           <div className="py-16 px-8 sm:px-16" data-aos="fade-up">
-            <h1
-              className="text-red-500 mb-10 text-center underline my-4 font-bold text3xl  sm:text-2xl"
-            >
+            <h1 className="text-red-500 mb-10 text-center underline my-4 font-bold text3xl  sm:text-2xl">
               CONTATTI:
             </h1>
-            <p className="text-xs" >
+            <p className="text-xs">
               <b>Nunber:</b> +39 3201852850
             </p>
-            <p className="text-xs" >
+            <p className="text-xs">
               <b>Email: </b> francescofoti44@gmail.com
             </p>
-            <p className="text-xs" >
+            <p className="text-xs">
               <b>City:</b> Brindisi
             </p>
             <Link
               to={"https://www.linkedin.com/in/francesco-foti-1a3b232b9/"}
               className="text-xs"
-              
             >
               <b className="underline">Linkedin</b>
             </Link>
@@ -91,7 +88,6 @@ const About = () => {
             <Link
               to={"https://www.instagram.com/frangifrutti/"}
               className="text-xs"
-              
             >
               <b className="underline">Instagram</b>
             </Link>
