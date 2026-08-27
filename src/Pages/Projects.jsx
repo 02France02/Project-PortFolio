@@ -1,4 +1,5 @@
 import LazyVideo from "../Components/LazyVideo";
+import { Trans, useTranslation } from "react-i18next";
 import video_project from "../assets/video_project.mp4";
 import video_Bycycle from "../assets/bycycleFast.mp4";
 import img_Bycycle from "../assets/by_img.png";
@@ -11,50 +12,6 @@ import video_pex_desk from "../assets/pexel_desk_video.mp4";
 
 const mediaClass =
   "rounded-md object-contain shadow-lg transition duration-500 hover:-translate-y-1 hover:opacity-90";
-
-const projects = [
-  {
-    title: "ByCycle",
-    description:
-      "Una community online dedicata a tutti gli amanti del ciclismo. Permette di fare log-in e log-out, interagire con altri utenti, avviare discussioni, scoprire nuovi percorsi ciclabili in tutta Europa con dettagli e mappe, eliminare il proprio account e molto altro!",
-    mobileMedia: { type: "img", src: img_Bycycle, width: "w-[26%]" },
-    desktopMedia: { type: "video", src: video_Bycycle },
-  },
-  {
-    title: "Copia Electronic Arts",
-    description: (
-      <>
-        Il mio primo progetto di team, interamente realizzato in Vanilla: HTML,
-        CSS e JavaScript. Abbiamo riprodotto nel dettaglio il famoso sito{" "}
-        <a
-          href="https://www.ea.com/it-it"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline transition-colors hover:text-indigo-400"
-        >
-          Electronic Arts
-        </a>{" "}
-        quasi alla perfezione!
-      </>
-    ),
-    mobileMedia: { type: "video", src: video_ea_mobile, width: "w-[54%]" },
-    desktopMedia: { type: "video", src: video_ea_desk },
-  },
-  {
-    title: "Landing Page React",
-    description:
-      "Una landing page realizzata con React, sviluppata nel tempo libero per sperimentare componenti e animazioni.",
-    mobileMedia: { type: "video", src: video_pex_mobile, width: "w-[56%]" },
-    desktopMedia: { type: "video", src: video_pex_desk },
-  },
-  {
-    title: "Landing Page Vanilla",
-    description:
-      "Un'altra landing page, realizzata solo con HTML, CSS e JavaScript, sviluppata sulla base di un esempio reale.",
-    mobileMedia: { type: "video", src: video_kang_mobile, width: "w-[56%]" },
-    desktopMedia: { type: "video", src: video_kang_desk },
-  },
-];
 
 const Media = ({ media, alt }) =>
   media.type === "img" ? (
@@ -72,6 +29,53 @@ const Media = ({ media, alt }) =>
   );
 
 const Projects = () => {
+  const { t } = useTranslation();
+
+  const projects = [
+    {
+      key: "byCycle",
+      title: t("projects.byCycleTitle"),
+      description: t("projects.byCycleDescription"),
+      mobileMedia: { type: "img", src: img_Bycycle, width: "w-[26%]" },
+      desktopMedia: { type: "video", src: video_Bycycle },
+    },
+    {
+      key: "ea",
+      title: t("projects.eaTitle"),
+      description: (
+        <Trans
+          i18nKey="projects.eaDescription"
+          components={{
+            ea: (
+              <a
+                href="https://www.ea.com/it-it"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline transition-colors hover:text-indigo-400"
+              />
+            ),
+          }}
+        />
+      ),
+      mobileMedia: { type: "video", src: video_ea_mobile, width: "w-[54%]" },
+      desktopMedia: { type: "video", src: video_ea_desk },
+    },
+    {
+      key: "reactLanding",
+      title: t("projects.reactLandingTitle"),
+      description: t("projects.reactLandingDescription"),
+      mobileMedia: { type: "video", src: video_pex_mobile, width: "w-[56%]" },
+      desktopMedia: { type: "video", src: video_pex_desk },
+    },
+    {
+      key: "vanillaLanding",
+      title: t("projects.vanillaLandingTitle"),
+      description: t("projects.vanillaLandingDescription"),
+      mobileMedia: { type: "video", src: video_kang_mobile, width: "w-[56%]" },
+      desktopMedia: { type: "video", src: video_kang_desk },
+    },
+  ];
+
   return (
     <div className="relative flex flex-col items-center gap-28 overflow-hidden px-8 py-16 sm:px-16">
       <video
@@ -86,11 +90,11 @@ const Projects = () => {
       <div className="absolute inset-0 z-[1] bg-gray-900/50"></div>
 
       <h1 className="z-10 text-center text-3xl font-extrabold text-white sm:text-4xl">
-        I MIEI PROGETTI
+        {t("projects.title")}
       </h1>
 
       {projects.map((project) => (
-        <div key={project.title} className="z-10 w-full" data-aos="fade-up">
+        <div key={project.key} className="z-10 w-full" data-aos="fade-up">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-white underline">
               {project.title}

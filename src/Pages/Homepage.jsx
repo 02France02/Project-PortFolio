@@ -6,34 +6,36 @@ import js_img from "../assets/js.png";
 import node_img from "../assets/node.png";
 import project_img from "../assets/project.jpg";
 import Button from "../Components/Button";
-import BugHunt from "../Components/BugHunt";
 import LazyVideo from "../Components/LazyVideo";
-
-const technologies = [
-  {
-    title: "REACT per interfacce utente dinamiche e interattive",
-    text: "Sviluppo siti web moderni e veloci grazie alla libreria React di JavaScript.",
-    img: react_img,
-    alt: "React",
-    aos: "fade-right",
-  },
-  {
-    title: "JAVASCRIPT per la logica e la dinamicità",
-    text: "Sviluppo siti web ricchi di interattività e funzioni avanzate usando JavaScript.",
-    img: js_img,
-    alt: "JavaScript",
-    aos: "fade-left",
-  },
-  {
-    title: "NODE.JS per back-end scalabili e performanti",
-    text: "Sviluppo applicazioni web scalabili e ad alte prestazioni con Node.js.",
-    img: node_img,
-    alt: "Node.js",
-    aos: "fade-right",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Homepage = () => {
+  const { t } = useTranslation();
+
+  const technologies = [
+    {
+      title: t("home.techReactTitle"),
+      text: t("home.techReactText"),
+      img: react_img,
+      alt: "React",
+      aos: "fade-right",
+    },
+    {
+      title: t("home.techJsTitle"),
+      text: t("home.techJsText"),
+      img: js_img,
+      alt: "JavaScript",
+      aos: "fade-left",
+    },
+    {
+      title: t("home.techNodeTitle"),
+      text: t("home.techNodeText"),
+      img: node_img,
+      alt: "Node.js",
+      aos: "fade-right",
+    },
+  ];
+
   return (
     <div>
       {/* Video hero */}
@@ -64,14 +66,12 @@ const Homepage = () => {
         <div className="image_home1 absolute inset-0"></div>
         <div className="relative z-10 flex flex-col items-center gap-5 rounded-lg bg-opacity-60 p-[6%] text-center">
           <h2 className="text-2xl font-extrabold max-xs:text-lg">
-            Trasformo le TUE idee in Prodotti Digitali!
+            {t("home.heroTitle")}
           </h2>
-          <p className="text-sm">
-            Sviluppo siti e app web su misura che rispecchiano le tue ambizioni
-          </p>
+          <p className="text-sm">{t("home.heroSubtitle")}</p>
           <div className="flex justify-center gap-7 max-xs:flex-wrap">
-            <Button text="Crea Il Tuo Sito!" path="/service" />
-            <Button text="Contattami" path="/contact" />
+            <Button text={t("home.ctaCreateSite")} path="/service" />
+            <Button text={t("home.ctaContact")} path="/contact" />
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@ const Homepage = () => {
         <div className="z-10">
           <div className="flex justify-center">
             <h1 className="text-xl font-extrabold text-white sm:text-2xl">
-              PRINCIPALI TECNOLOGIE
+              {t("home.techTitle")}
             </h1>
           </div>
 
@@ -126,12 +126,12 @@ const Homepage = () => {
         data-aos="fade-up"
       >
         <h2 className="text-center text-xl font-extrabold text-white sm:text-2xl">
-          PAUSA CAFFÈ? ☕
+          {t("home.gameBreakTitle")}
         </h2>
         <p className="text-center text-sm text-gray-400">
-          Mettiti alla prova con un piccolo gioco da sviluppatore!
+          {t("home.gameBreakSubtitle")}
         </p>
-        <BugHunt />
+        <Button text={t("nav.games")} path="/games" />
       </div>
 
       {/* Progetti */}
@@ -147,9 +147,9 @@ const Homepage = () => {
         />
         <div className="z-10 text-center">
           <h1 className="mb-10 text-3xl font-extrabold text-white sm:text-4xl">
-            ECCO QUALCHE MIO PROGETTO!
+            {t("home.projectsTitle")}
           </h1>
-          <Button text="Progetti" path="/projects" />
+          <Button text={t("home.projectsCta")} path="/projects" />
         </div>
       </div>
     </div>

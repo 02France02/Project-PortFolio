@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import useHighScore from "../hooks/useHighScore";
 
 const GAME_DURATION = 20; // secondi
 const GRID_SIZE = 9;
 
 const BugHunt = () => {
+  const { t } = useTranslation();
   const [playing, setPlaying] = useState(false);
   const [score, setScore] = useState(0);
-  const [best, setBest] = useState(0);
+  const [best, setBest] = useHighScore("bug-hunt");
   const [timeLeft, setTimeLeft] = useState(GAME_DURATION);
   const [bugIndex, setBugIndex] = useState(-1);
   const [finished, setFinished] = useState(false);
@@ -60,18 +63,16 @@ const BugHunt = () => {
   return (
     <div className="mx-auto w-full max-w-sm rounded-2xl border border-gray-800 bg-gray-900/80 p-6 text-center shadow-xl backdrop-blur">
       <h3 className="text-lg font-extrabold text-white">
-        🐛 CACCIA AL BUG
+        {t("bugHunt.title")}
       </h3>
-      <p className="mt-1 text-xs text-gray-400">
-        Ogni sviluppatore odia i bug... schiacciali prima che scappino!
-      </p>
+      <p className="mt-1 text-xs text-gray-400">{t("bugHunt.subtitle")}</p>
 
       <div className="mt-4 flex items-center justify-between text-xs font-semibold text-gray-300">
         <span>
           ⏱️ {timeLeft}s
         </span>
-        <span className="text-indigo-400">Punti: {score}</span>
-        <span>🏆 Record: {best}</span>
+        <span className="text-indigo-400">{t("bugHunt.points")} {score}</span>
+        <span>{t("bugHunt.record")} {best}</span>
       </div>
 
       <div className="mt-4 grid grid-cols-3 gap-2">
@@ -80,7 +81,7 @@ const BugHunt = () => {
             key={i}
             type="button"
             onClick={() => squash(i)}
-            aria-label={i === bugIndex ? "Bug! Schiaccialo!" : "Casella vuota"}
+            aria-label={i === bugIndex ? t("bugHunt.bugAlt") : t("bugHunt.emptyAlt")}
             className={`flex aspect-square items-center justify-center rounded-lg border text-2xl transition-all duration-150 ${
               i === bugIndex
                 ? "scale-105 border-indigo-400 bg-indigo-500/30"
@@ -95,10 +96,10 @@ const BugHunt = () => {
       {finished && (
         <p className="mt-4 text-sm font-semibold text-indigo-300" role="status">
           {score >= 15
-            ? `WOW, ${score} bug! Il codice è pulito 🚀`
+            ? t("bugHunt.resultHigh", { score })
             : score >= 8
-            ? `${score} bug schiacciati, mica male! 💪`
-            : `Solo ${score}... i bug sono ancora in produzione 😅`}
+            ? t("bugHunt.resultMid", { score })
+            : t("bugHunt.resultLow", { score })}
         </p>
       )}
 
@@ -108,7 +109,11 @@ const BugHunt = () => {
         disabled={playing}
         className="mt-4 rounded-lg bg-indigo-500 px-6 py-2 text-sm font-bold text-white transition-colors hover:bg-indigo-600 disabled:cursor-not-allowed disabled:opacity-50"
       >
-        {playing ? "In gioco..." : finished ? "RIGIOCA" : "GIOCA"}
+        {playing
+          ? t("bugHunt.playing")
+          : finished
+          ? t("bugHunt.replay")
+          : t("bugHunt.play")}
       </button>
     </div>
   );

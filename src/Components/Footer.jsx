@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import logoFra from '../../public/logo_Fra&Tech.png'
 const Footer = () => {
+  const { t } = useTranslation();
   const navigation = [
-    { name: "Home", to: "/", current: false },
-    { name: "About", to: "/about", current: false },
-    { name: "Progetti", to: "/projects", current: false },
-    { name: "Servizi", to: "/service", current: false },
+    { key: "home", name: t("nav.home"), to: "/", current: false },
+    { key: "about", name: t("nav.about"), to: "/about", current: false },
+    { key: "projects", name: t("nav.projects"), to: "/projects", current: false },
+    { key: "service", name: t("nav.service"), to: "/service", current: false },
+    { key: "games", name: t("nav.games"), to: "/games", current: false },
   ];
 
   function classNames(...classes) {
@@ -29,7 +32,7 @@ const Footer = () => {
           <div className="max-xxs:flex max-xxs:flex-wrap text-lg text-center sm:flex items-center justify-center  gap-14 lg:gap-10 xl:gap-14 transition-all duration-500">
             {navigation.map((item) => (
               <Link
-                key={item.name}
+                key={item.key}
                 to={item.to}
                 className={classNames(
                   item.current
@@ -121,8 +124,7 @@ const Footer = () => {
         <div className="py-5 border-t border-gray-700">
           <div className="flex items-center justify-center">
             <span className="text-gray-400 text-xs">
-              ©<Link to="/">Fra&Tech </Link>{year}, All rights
-              reserved.
+              ©<Link to="/">Fra&Tech </Link>{year}, {t("footer.rights")}
             </span>
           </div>
         </div>

@@ -1,27 +1,28 @@
 import { Link } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 import code_video from "../assets/code_video.mp4";
 import io from "../assets/io.png";
 
-const experiences = [
-  {
-    period: "Giu 2025 — Presente",
-    role: "Tecnico Informatico",
-    company: "ITS Academy Mobilità",
-    description:
-      "Dal 10 giugno 2025 lavoro come Tecnico Informatico presso ITS Academy Mobilità: gestione e manutenzione dell'infrastruttura IT, supporto tecnico e assistenza hardware/software.",
-    current: true,
-  },
-  {
-    period: "2024",
-    role: "Certificazione Full-Stack Development",
-    company: "Develhope",
-    description:
-      "Certificazione in sviluppo web: HTML, CSS, JavaScript, React, Node.js e database relazionali e non relazionali.",
-    current: false,
-  },
-];
-
 const About = () => {
+  const { t } = useTranslation();
+
+  const experiences = [
+    {
+      period: t("about.exp1Period"),
+      role: t("about.exp1Role"),
+      company: t("about.exp1Company"),
+      description: t("about.exp1Description"),
+      current: true,
+    },
+    {
+      period: t("about.exp2Period"),
+      role: t("about.exp2Role"),
+      company: t("about.exp2Company"),
+      description: t("about.exp2Description"),
+      current: false,
+    },
+  ];
+
   return (
     <div>
       {/* Hero */}
@@ -52,24 +53,17 @@ const About = () => {
           data-aos="fade-left"
         >
           <h2 className="my-4 text-3xl font-bold text-white sm:text-4xl">
-            CHI È <span className="text-[#EF6B5E] underline">FRA&TECH</span>?
+            {t("about.heroTitlePre")}{" "}
+            <span className="text-[#EF6B5E] underline">
+              {t("about.heroTitleHighlight")}
+            </span>
+            {t("about.heroTitlePost")}
           </h2>
           <p className="text-sm leading-7 text-white">
-            Ciao, sono Francesco, ho 24 anni e benvenuti nel mio portfolio.
-            <br />
-            Attualmente lavoro come <b>Tecnico Informatico</b> presso{" "}
-            <b>ITS Academy Mobilità</b> e sono uno Junior Front-End Developer
-            con competenze anche nel Back-End. Per il <b>Front-End</b> utilizzo{" "}
-            <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, <b>React</b> e{" "}
-            <b>Tailwind CSS</b>. Per il <b>Back-End</b> ho studiato{" "}
-            <b>Node.js</b> e database relazionali come <b>PostgreSQL</b> e non
-            relazionali come <b>MongoDB</b>.
-            <br />
-            Sono una persona dinamica e appassionata del mondo informatico, sia
-            hardware che software. Mi piace apprendere continuamente e
-            migliorare le mie competenze: ho ottenuto una certificazione in
-            sviluppo web da Develhope e la mia missione è trasformare idee in
-            soluzioni tecnologiche funzionali.
+            <Trans
+              i18nKey="about.intro"
+              components={{ bold: <b />, br: <br /> }}
+            />
           </p>
         </div>
       </div>
@@ -80,7 +74,7 @@ const About = () => {
           className="mb-12 text-center text-2xl font-bold text-white sm:text-3xl"
           data-aos="fade-up"
         >
-          ESPERIENZA
+          {t("about.experienceTitle")}
         </h2>
         <div className="relative mx-auto max-w-2xl">
           {/* Linea verticale */}
@@ -110,7 +104,7 @@ const About = () => {
               <div className="rounded-xl border border-gray-800 bg-gray-800/50 p-5 transition-transform duration-300 hover:-translate-y-1 hover:border-indigo-500/50">
                 {exp.current && (
                   <span className="mb-2 inline-block rounded-full bg-indigo-500/20 px-3 py-0.5 text-xs font-semibold text-indigo-300">
-                    In corso
+                    {t("about.currentBadge")}
                   </span>
                 )}
                 <p className="text-xs font-semibold uppercase tracking-wider text-indigo-400">
@@ -134,11 +128,11 @@ const About = () => {
       {/* Contatti */}
       <section className="bg-gray-900 px-8 pb-16 sm:px-16" data-aos="fade-up">
         <h2 className="mb-10 text-center text-2xl font-bold text-white sm:text-3xl">
-          CONTATTI
+          {t("about.contactsTitle")}
         </h2>
         <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 rounded-xl border border-gray-800 bg-gray-800/50 p-6 text-sm text-gray-300">
           <p>
-            <b>Telefono:</b>{" "}
+            <b>{t("about.phoneLabel")}</b>{" "}
             <a
               href="tel:+393201852850"
               className="transition-colors hover:text-indigo-400"
@@ -147,7 +141,7 @@ const About = () => {
             </a>
           </p>
           <p>
-            <b>Email:</b>{" "}
+            <b>{t("about.emailLabel")}</b>{" "}
             <a
               href="mailto:francescofoti44@gmail.com"
               className="transition-colors hover:text-indigo-400"
@@ -156,7 +150,7 @@ const About = () => {
             </a>
           </p>
           <p>
-            <b>Città:</b> Brindisi
+            <b>{t("about.cityLabel")}</b> {t("about.city")}
           </p>
           <div className="mt-2 flex gap-6">
             <Link

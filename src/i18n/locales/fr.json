@@ -1,0 +1,186 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "service": "Services",
+    "games": "Jeux",
+    "contact": "Contactez-moi",
+    "openMenu": "Ouvrir le menu principal"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  },
+  "home": {
+    "heroTitle": "Je transforme TES idées en Produits Numériques !",
+    "heroSubtitle": "Je développe des sites et applications web sur mesure qui reflètent tes ambitions",
+    "ctaCreateSite": "Crée Ton Site !",
+    "ctaContact": "Contactez-moi",
+    "techTitle": "PRINCIPALES TECHNOLOGIES",
+    "techReactTitle": "REACT pour des interfaces utilisateur dynamiques et interactives",
+    "techReactText": "Je développe des sites web modernes et rapides grâce à la bibliothèque React de JavaScript.",
+    "techJsTitle": "JAVASCRIPT pour la logique et l'interactivité",
+    "techJsText": "Je développe des sites web riches en interactivité et en fonctionnalités avancées avec JavaScript.",
+    "techNodeTitle": "NODE.JS pour des back-ends évolutifs et performants",
+    "techNodeText": "Je développe des applications web évolutives et performantes avec Node.js.",
+    "gameBreakTitle": "PAUSE CAFÉ ? ☕",
+    "gameBreakSubtitle": "Teste-toi avec un petit jeu de développeur !",
+    "projectsTitle": "VOICI QUELQUES-UNS DE MES PROJETS !",
+    "projectsCta": "Projets"
+  },
+  "about": {
+    "heroTitlePre": "QUI EST",
+    "heroTitleHighlight": "FRA&TECH",
+    "heroTitlePost": " ?",
+    "intro": "Salut, je m'appelle Francesco, j'ai 24 ans et bienvenue sur mon portfolio.<br/>Je travaille actuellement comme <bold>Technicien Informatique</bold> chez <bold>ITS Academy Mobilità</bold> et je suis développeur Front-End junior avec des compétences également en Back-End. Pour le <bold>Front-End</bold> j'utilise <bold>HTML</bold>, <bold>CSS</bold>, <bold>JavaScript</bold>, <bold>React</bold> et <bold>Tailwind CSS</bold>. Pour le <bold>Back-End</bold> j'ai étudié <bold>Node.js</bold> et des bases de données relationnelles comme <bold>PostgreSQL</bold> et non relationnelles comme <bold>MongoDB</bold>.<br/>Je suis une personne dynamique et passionnée par l'informatique, aussi bien le matériel que le logiciel. J'aime apprendre continuellement et améliorer mes compétences : j'ai obtenu une certification en développement web chez Develhope et ma mission est de transformer des idées en solutions technologiques fonctionnelles.",
+    "experienceTitle": "EXPÉRIENCE",
+    "currentBadge": "En cours",
+    "exp1Period": "Juin 2025 — Présent",
+    "exp1Role": "Technicien Informatique",
+    "exp1Company": "ITS Academy Mobilità",
+    "exp1Description": "Depuis le 10 juin 2025, je travaille comme Technicien Informatique chez ITS Academy Mobilità : gestion et maintenance de l'infrastructure informatique, support technique et assistance matérielle/logicielle.",
+    "exp2Period": "2024",
+    "exp2Role": "Certification Full-Stack Development",
+    "exp2Company": "Develhope",
+    "exp2Description": "Certification en développement web : HTML, CSS, JavaScript, React, Node.js et bases de données relationnelles et non relationnelles.",
+    "contactsTitle": "CONTACTS",
+    "phoneLabel": "Téléphone :",
+    "emailLabel": "Email :",
+    "cityLabel": "Ville :",
+    "city": "Brindisi, Italie"
+  },
+  "contact": {
+    "title": "CONTACTEZ-MOI",
+    "subtitle": "Racontez-moi votre idée de site web ou d'application web : je vous répondrai dès que possible !",
+    "firstName": "Prénom",
+    "firstNameRequired": "Prénom *",
+    "lastName": "Nom",
+    "email": "Email",
+    "emailRequired": "Email *",
+    "service": "Sélectionnez un service",
+    "serviceWebsite": "Site Web",
+    "serviceWebapp": "Web App",
+    "serviceSocial": "Gestion des Réseaux Sociaux",
+    "serviceOther": "Autre",
+    "message": "Message",
+    "messageRequired": "Message *",
+    "sending": "ENVOI...",
+    "send": "ENVOYER",
+    "successMessage": "✅ Message envoyé avec succès ! Je vous répondrai dès que possible.",
+    "errorMessage": "❌ Oups, un problème est survenu. Réessayez bientôt ou écrivez-moi directement à francescofoti44@gmail.com.",
+    "errors": {
+      "name": "Entrez votre nom",
+      "email": "Entrez votre email",
+      "emailInvalid": "Email invalide",
+      "message": "Écrivez un message"
+    },
+    "city": "Brindisi",
+    "zip": "72100"
+  },
+  "projects": {
+    "title": "MES PROJETS",
+    "byCycleTitle": "ByCycle",
+    "byCycleDescription": "Une communauté en ligne dédiée à tous les amateurs de cyclisme. Elle permet de se connecter et se déconnecter, d'interagir avec d'autres utilisateurs, de lancer des discussions, de découvrir de nouveaux itinéraires cyclables dans toute l'Europe avec détails et cartes, de supprimer son compte et bien plus encore !",
+    "eaTitle": "Clone Electronic Arts",
+    "eaDescription": "Mon premier projet d'équipe, entièrement réalisé en Vanilla : HTML, CSS et JavaScript. Nous avons reproduit en détail le célèbre site <ea>Electronic Arts</ea> presque à la perfection !",
+    "reactLandingTitle": "Landing Page React",
+    "reactLandingDescription": "Une landing page réalisée avec React, développée sur mon temps libre pour expérimenter des composants et des animations.",
+    "vanillaLandingTitle": "Landing Page Vanilla",
+    "vanillaLandingDescription": "Une autre landing page, réalisée uniquement avec HTML, CSS et JavaScript, développée à partir d'un exemple réel."
+  },
+  "service": {
+    "websiteTitle": "Je Crée Votre Site Web",
+    "websiteText": "Ils peuvent être <bold>Statiques</bold> ou <bold>Dynamiques</bold>. Ce sont des pages informatives principalement destinées à fournir du contenu aux utilisateurs.",
+    "webappTitle": "Je Crée Votre Web App",
+    "webappText1": "Elles peuvent être <bold>Interactives</bold> et <bold>Dynamiques</bold>. Ce sont des programmes interactifs conçus pour offrir des fonctionnalités spécifiques aux utilisateurs.",
+    "webappText2": "Elles sont conçues avec une architecture Full-Stack, incluant <bold>Front-End</bold> et <bold>Back-End</bold>.",
+    "socialTitle": "Je Gère Vos Réseaux Sociaux",
+    "socialText": "Je peux gérer la <bold>publication</bold> et la <bold>promotion</bold> de vos <bold>Réseaux Sociaux</bold>, avec indexation et les bonnes <bold>stratégies</bold>.",
+    "ctaTitle": "ENCORE INDÉCIS ?",
+    "ctaText": "Contactez-moi pour une brève consultation ou un devis, afin de choisir le service qui vous convient le mieux !",
+    "ctaButton": "Contactez-moi"
+  },
+  "notFound": {
+    "title": "Oups ! Page non trouvée.",
+    "text": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil"
+  },
+  "bugHunt": {
+    "title": "🐛 CHASSE AUX BUGS",
+    "subtitle": "Chaque développeur déteste les bugs... écrasez-les avant qu'ils ne s'échappent !",
+    "points": "Points :",
+    "record": "🏆 Record :",
+    "bugAlt": "Bug ! Écrase-le !",
+    "emptyAlt": "Case vide",
+    "resultHigh": "WOW, {{score}} bugs ! Le code est propre 🚀",
+    "resultMid": "{{score}} bugs écrasés, pas mal ! 💪",
+    "resultLow": "Seulement {{score}}... les bugs sont encore en production 😅",
+    "playing": "En jeu...",
+    "replay": "REJOUER",
+    "play": "JOUER"
+  },
+  "languages": {
+    "it": "Italien",
+    "en": "Anglais",
+    "es": "Espagnol",
+    "fr": "Français"
+  },
+  "games": {
+    "hubTitle": "JEUX",
+    "hubSubtitle": "Petites pauses de développeur : joue et essaie de battre ton record. Les scores sont sauvegardés sur cet appareil.",
+    "backToGames": "← Retour aux jeux",
+    "bugHunt": {
+      "cardTitle": "Chasse aux Bugs",
+      "cardDescription": "Écrase le bug avant qu'il ne s'échappe."
+    },
+    "snake": {
+      "cardTitle": "Snake",
+      "cardDescription": "Le classique serpent : mange et grandis sans t'écraser.",
+      "instructions": "Flèches ou WASD pour te déplacer (glisser sur mobile).",
+      "start": "DÉMARRER",
+      "playAgain": "REJOUER",
+      "gameOver": "GAME OVER",
+      "score": "Score :",
+      "record": "🏆 Record :"
+    },
+    "tris": {
+      "cardTitle": "Morpion",
+      "cardDescription": "Défie l'ordinateur, niveau facile.",
+      "youWin": "Tu as gagné ! 🎉",
+      "youLose": "Le CPU a gagné 🤖",
+      "draw": "Match nul !",
+      "wins": "Victoires :",
+      "restart": "NOUVELLE PARTIE",
+      "yourTurn": "À ton tour",
+      "cpuTurn": "Le CPU réfléchit..."
+    },
+    "memory": {
+      "cardTitle": "Memory",
+      "cardDescription": "Trouve toutes les paires en un minimum de coups.",
+      "moves": "Coups :",
+      "record": "🏆 Meilleur score :",
+      "restart": "REJOUER",
+      "win": "Terminé en {{count}} coups !"
+    },
+    "reactionTest": {
+      "cardTitle": "Test de Réaction",
+      "cardDescription": "Mesure ton temps de réaction.",
+      "waitPrompt": "Attends le vert...",
+      "clickPrompt": "CLIQUE MAINTENANT !",
+      "tooSoon": "Trop tôt ! Réessaie.",
+      "start": "DÉMARRER",
+      "playAgain": "RÉESSAYER",
+      "resultMs": "{{value}} ms",
+      "record": "🏆 Record :"
+    },
+    "twoZeroFourEight": {
+      "cardTitle": "2048",
+      "cardDescription": "Fusionne les tuiles avec les mêmes flèches que Snake jusqu'à atteindre 2048.",
+      "score": "Score :",
+      "record": "🏆 Record :",
+      "gameOver": "GAME OVER",
+      "newGame": "NOUVELLE PARTIE",
+      "instructions": "Flèches ou WASD pour déplacer les tuiles (glisser sur mobile)."
+    }
+  }
+}

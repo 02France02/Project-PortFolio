@@ -1,7 +1,9 @@
 import webApp_img from "../assets/webapp.jpg";
 import Button from "../Components/Button";
+import { Trans, useTranslation } from "react-i18next";
 
 const Service = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <div className="relative">
@@ -20,7 +22,7 @@ const Service = () => {
             data-aos-delay="100"
           >
             <h2 className="z-10 mb-4 flex items-center font-bold max-sm:text-base sm:text-xl lg:text-2xl">
-              Realizzo il Tuo Sito Web
+              {t("service.websiteTitle")}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.2em"
@@ -51,9 +53,7 @@ const Service = () => {
               </svg>
             </h2>
             <p className="sm:text-sm lg:text-base">
-              Possono essere <b>Statici</b> o <b>Dinamici</b>. Sono pagine
-              informative principalmente destinate a fornire contenuti agli
-              utenti.
+              <Trans i18nKey="service.websiteText" components={{ bold: <b /> }} />
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ const Service = () => {
             data-aos-delay="300"
           >
             <h2 className="z-10 mb-4 flex items-center font-bold max-sm:text-base sm:text-xl lg:text-2xl">
-              Realizzo la Tua Web App
+              {t("service.webappTitle")}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.1em"
@@ -94,13 +94,10 @@ const Service = () => {
               </svg>
             </h2>
             <p className="sm:text-sm lg:text-base">
-              Possono essere <b>Interattive</b> e <b>Dinamiche</b>. Sono
-              programmi interattivi progettati per offrire funzionalità
-              specifiche agli utenti.
+              <Trans i18nKey="service.webappText1" components={{ bold: <b /> }} />
             </p>
             <p className="sm:text-sm lg:text-base">
-              Vengono progettate utilizzando un'architettura Full-Stack, inclusi{" "}
-              <b>Front-End</b> e <b>Back-End</b>.
+              <Trans i18nKey="service.webappText2" components={{ bold: <b /> }} />
             </p>
           </div>
         </div>
@@ -113,7 +110,7 @@ const Service = () => {
             data-aos-delay="500"
           >
             <h2 className="z-10 mb-4 flex items-center font-bold max-sm:text-base sm:text-xl lg:text-2xl">
-              Gestisco i Tuoi Social
+              {t("service.socialTitle")}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.2em"
@@ -138,9 +135,7 @@ const Service = () => {
               </svg>
             </h2>
             <p className="sm:text-sm lg:text-base">
-              Posso gestire la <b>pubblicazione</b> e la <b>sponsorizzazione</b>{" "}
-              dei tuoi <b>Social</b>, con indicizzazione e le giuste{" "}
-              <b>strategie</b>.
+              <Trans i18nKey="service.socialText" components={{ bold: <b /> }} />
             </p>
           </div>
         </div>
@@ -154,14 +149,13 @@ const Service = () => {
           data-aos="fade-in"
         >
           <h2 className="text-2xl font-extrabold underline max-xs:text-xl">
-            ANCORA INDECISO?
+            {t("service.ctaTitle")}
           </h2>
           <p className="w-1/2 max-sm:w-full sm:text-sm lg:text-base">
-            Contattami per una breve consulenza o per un preventivo, così da
-            scegliere il servizio che fa più per te!
+            {t("service.ctaText")}
           </p>
           <div className="flex justify-center gap-7 max-xs:flex-wrap">
-            <Button text="Contattami" path="/contact" />
+            <Button text={t("service.ctaButton")} path="/contact" />
           </div>
         </div>
       </div>

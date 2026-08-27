@@ -8,13 +8,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useLocation } from "react-router-dom";
 import logoFra from "../../public/logo_fra_nobg.png";
 import { Fragment } from "react";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Progetti", href: "/projects" },
-  { name: "Servizi", href: "/service" },
-];
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -22,6 +17,20 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const location = useLocation();
+  const { t } = useTranslation();
+
+  const navigation = [
+    { key: "home", name: t("nav.home"), href: "/" },
+    { key: "about", name: t("nav.about"), href: "/about" },
+    { key: "projects", name: t("nav.projects"), href: "/projects" },
+    { key: "service", name: t("nav.service"), href: "/service" },
+    { key: "games", name: t("nav.games"), href: "/games" },
+  ];
+
+  const isActive = (href) =>
+    href === "/games"
+      ? location.pathname.startsWith("/games")
+      : location.pathname === href;
 
   return (
     <Disclosure
@@ -36,7 +45,7 @@ export default function Navbar() {
                 {/* Bottone menu mobile */}
                 <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Apri il menu principale</span>
+                  <span className="sr-only">{t("nav.openMenu")}</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -58,17 +67,15 @@ export default function Navbar() {
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <Link
-                        key={item.name}
+                        key={item.key}
                         to={item.href}
                         className={classNames(
-                          location.pathname === item.href
+                          isActive(item.href)
                             ? "bg-gray-900 text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
                           "rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200"
                         )}
-                        aria-current={
-                          location.pathname === item.href ? "page" : undefined
-                        }
+                        aria-current={isActive(item.href) ? "page" : undefined}
                       >
                         {item.name}
                       </Link>
@@ -76,13 +83,14 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className="absolute inset-y-0 right-0 flex items-center gap-2 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <LanguageSwitcher />
                 <Link to="/contact">
                   <button
                     type="button"
                     className="relative rounded-full bg-indigo-600 px-4 py-1.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-gray-800"
                   >
-                    Contattami
+                    {t("nav.contact")}
                   </button>
                 </Link>
               </div>
@@ -103,22 +111,23 @@ export default function Navbar() {
               <div className="space-y-1 px-2 pb-3 pt-2">
                 {navigation.map((item) => (
                   <DisclosureButton
-                    key={item.name}
+                    key={item.key}
                     as={Link}
                     to={item.href}
                     className={classNames(
-                      location.pathname === item.href
+                      isActive(item.href)
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white",
                       "block rounded-md px-3 py-2 text-sm font-medium"
                     )}
-                    aria-current={
-                      location.pathname === item.href ? "page" : undefined
-                    }
+                    aria-current={isActive(item.href) ? "page" : undefined}
                   >
                     {item.name}
                   </DisclosureButton>
                 ))}
+                <div className="px-3 pt-2">
+                  <LanguageSwitcher variant="mobile" />
+                </div>
               </div>
             </DisclosurePanel>
           </Transition>

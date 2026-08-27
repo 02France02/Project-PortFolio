@@ -1,0 +1,186 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "service": "Services",
+    "games": "Games",
+    "contact": "Contact Me",
+    "openMenu": "Open main menu"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "home": {
+    "heroTitle": "I turn YOUR ideas into Digital Products!",
+    "heroSubtitle": "I build custom websites and web apps that reflect your ambitions",
+    "ctaCreateSite": "Build Your Site!",
+    "ctaContact": "Contact Me",
+    "techTitle": "MAIN TECHNOLOGIES",
+    "techReactTitle": "REACT for dynamic and interactive user interfaces",
+    "techReactText": "I build modern, fast websites using the React JavaScript library.",
+    "techJsTitle": "JAVASCRIPT for logic and interactivity",
+    "techJsText": "I build websites rich in interactivity and advanced features using JavaScript.",
+    "techNodeTitle": "NODE.JS for scalable, high-performance back-ends",
+    "techNodeText": "I build scalable, high-performance web applications with Node.js.",
+    "gameBreakTitle": "COFFEE BREAK? ☕",
+    "gameBreakSubtitle": "Test yourself with a little developer game!",
+    "projectsTitle": "HERE ARE SOME OF MY PROJECTS!",
+    "projectsCta": "Projects"
+  },
+  "about": {
+    "heroTitlePre": "WHO IS",
+    "heroTitleHighlight": "FRA&TECH",
+    "heroTitlePost": "?",
+    "intro": "Hi, I'm Francesco, I'm 24 years old, and welcome to my portfolio.<br/>I currently work as an <bold>IT Technician</bold> at <bold>ITS Academy Mobilità</bold> and I'm a Junior Front-End Developer with Back-End skills as well. For <bold>Front-End</bold> I use <bold>HTML</bold>, <bold>CSS</bold>, <bold>JavaScript</bold>, <bold>React</bold> and <bold>Tailwind CSS</bold>. For <bold>Back-End</bold> I've studied <bold>Node.js</bold> and relational databases like <bold>PostgreSQL</bold> as well as non-relational ones like <bold>MongoDB</bold>.<br/>I'm a dynamic person passionate about IT, both hardware and software. I love learning continuously and improving my skills: I earned a web development certification from Develhope, and my mission is to turn ideas into functional technological solutions.",
+    "experienceTitle": "EXPERIENCE",
+    "currentBadge": "Ongoing",
+    "exp1Period": "Jun 2025 — Present",
+    "exp1Role": "IT Technician",
+    "exp1Company": "ITS Academy Mobilità",
+    "exp1Description": "Since June 10, 2025 I've been working as an IT Technician at ITS Academy Mobilità: IT infrastructure management and maintenance, technical support and hardware/software assistance.",
+    "exp2Period": "2024",
+    "exp2Role": "Full-Stack Development Certification",
+    "exp2Company": "Develhope",
+    "exp2Description": "Web development certification: HTML, CSS, JavaScript, React, Node.js and relational and non-relational databases.",
+    "contactsTitle": "CONTACTS",
+    "phoneLabel": "Phone:",
+    "emailLabel": "Email:",
+    "cityLabel": "City:",
+    "city": "Brindisi, Italy"
+  },
+  "contact": {
+    "title": "CONTACT ME",
+    "subtitle": "Tell me about your website or web app idea: I'll get back to you as soon as possible!",
+    "firstName": "First name",
+    "firstNameRequired": "First name *",
+    "lastName": "Last name",
+    "email": "Email",
+    "emailRequired": "Email *",
+    "service": "Select a service",
+    "serviceWebsite": "Website",
+    "serviceWebapp": "Web App",
+    "serviceSocial": "Social Media Management",
+    "serviceOther": "Other",
+    "message": "Message",
+    "messageRequired": "Message *",
+    "sending": "SENDING...",
+    "send": "SEND",
+    "successMessage": "✅ Message sent successfully! I'll get back to you as soon as possible.",
+    "errorMessage": "❌ Oops, something went wrong. Try again shortly or email me directly at francescofoti44@gmail.com.",
+    "errors": {
+      "name": "Please enter your name",
+      "email": "Please enter your email",
+      "emailInvalid": "Invalid email",
+      "message": "Please write a message"
+    },
+    "city": "Brindisi",
+    "zip": "72100"
+  },
+  "projects": {
+    "title": "MY PROJECTS",
+    "byCycleTitle": "ByCycle",
+    "byCycleDescription": "An online community dedicated to all cycling enthusiasts. It allows you to log in and out, interact with other users, start discussions, discover new cycling routes across Europe with details and maps, delete your account, and much more!",
+    "eaTitle": "Electronic Arts Clone",
+    "eaDescription": "My first team project, built entirely in Vanilla: HTML, CSS and JavaScript. We recreated the famous <ea>Electronic Arts</ea> website in detail, almost to perfection!",
+    "reactLandingTitle": "React Landing Page",
+    "reactLandingDescription": "A landing page built with React, developed in my free time to experiment with components and animations.",
+    "vanillaLandingTitle": "Vanilla Landing Page",
+    "vanillaLandingDescription": "Another landing page, built only with HTML, CSS and JavaScript, based on a real-world example."
+  },
+  "service": {
+    "websiteTitle": "I Build Your Website",
+    "websiteText": "They can be <bold>Static</bold> or <bold>Dynamic</bold>. They are informational pages mainly meant to provide content to users.",
+    "webappTitle": "I Build Your Web App",
+    "webappText1": "They can be <bold>Interactive</bold> and <bold>Dynamic</bold>. They are interactive programs designed to offer specific features to users.",
+    "webappText2": "They are designed using a Full-Stack architecture, including <bold>Front-End</bold> and <bold>Back-End</bold>.",
+    "socialTitle": "I Manage Your Social Media",
+    "socialText": "I can handle <bold>publishing</bold> and <bold>promotion</bold> of your <bold>Social Media</bold>, with indexing and the right <bold>strategies</bold>.",
+    "ctaTitle": "STILL UNDECIDED?",
+    "ctaText": "Contact me for a quick consultation or a quote, to choose the service that's best for you!",
+    "ctaButton": "Contact Me"
+  },
+  "notFound": {
+    "title": "Oops! Page not found.",
+    "text": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "bugHunt": {
+    "title": "🐛 BUG HUNT",
+    "subtitle": "Every developer hates bugs... squash them before they escape!",
+    "points": "Score:",
+    "record": "🏆 Record:",
+    "bugAlt": "Bug! Squash it!",
+    "emptyAlt": "Empty cell",
+    "resultHigh": "WOW, {{score}} bugs! The code is clean 🚀",
+    "resultMid": "{{score}} bugs squashed, not bad! 💪",
+    "resultLow": "Only {{score}}... the bugs are still in production 😅",
+    "playing": "Playing...",
+    "replay": "PLAY AGAIN",
+    "play": "PLAY"
+  },
+  "languages": {
+    "it": "Italian",
+    "en": "English",
+    "es": "Spanish",
+    "fr": "French"
+  },
+  "games": {
+    "hubTitle": "GAMES",
+    "hubSubtitle": "Little developer breaks: play and try to beat your record. Scores are saved on this device.",
+    "backToGames": "← Back to games",
+    "bugHunt": {
+      "cardTitle": "Bug Hunt",
+      "cardDescription": "Squash the bug before it escapes."
+    },
+    "snake": {
+      "cardTitle": "Snake",
+      "cardDescription": "The classic snake: eat and grow without crashing.",
+      "instructions": "Arrow keys or WASD to move (swipe on mobile).",
+      "start": "START",
+      "playAgain": "PLAY AGAIN",
+      "gameOver": "GAME OVER",
+      "score": "Score:",
+      "record": "🏆 Record:"
+    },
+    "tris": {
+      "cardTitle": "Tic-Tac-Toe",
+      "cardDescription": "Challenge the computer, easy level.",
+      "youWin": "You won! 🎉",
+      "youLose": "The CPU won 🤖",
+      "draw": "Draw!",
+      "wins": "Wins:",
+      "restart": "NEW GAME",
+      "yourTurn": "Your turn",
+      "cpuTurn": "The CPU is thinking..."
+    },
+    "memory": {
+      "cardTitle": "Memory",
+      "cardDescription": "Find all the pairs in as few moves as possible.",
+      "moves": "Moves:",
+      "record": "🏆 Best score:",
+      "restart": "PLAY AGAIN",
+      "win": "Completed in {{count}} moves!"
+    },
+    "reactionTest": {
+      "cardTitle": "Reaction Test",
+      "cardDescription": "Measure your reaction time.",
+      "waitPrompt": "Wait for green...",
+      "clickPrompt": "CLICK NOW!",
+      "tooSoon": "Too soon! Try again.",
+      "start": "START",
+      "playAgain": "TRY AGAIN",
+      "resultMs": "{{value}} ms",
+      "record": "🏆 Record:"
+    },
+    "twoZeroFourEight": {
+      "cardTitle": "2048",
+      "cardDescription": "Merge the tiles using the same arrows as Snake until you reach 2048.",
+      "score": "Score:",
+      "record": "🏆 Record:",
+      "gameOver": "GAME OVER",
+      "newGame": "NEW GAME",
+      "instructions": "Arrow keys or WASD to move the tiles (swipe on mobile)."
+    }
+  }
+}

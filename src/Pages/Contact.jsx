@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const WEB3FORMS_ACCESS_KEY = "975b82be-af1c-486c-b6ba-299cc00034f8";
 
@@ -17,6 +18,7 @@ const initialForm = {
 };
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
@@ -29,13 +31,13 @@ const Contact = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!form.name.trim()) newErrors.name = "Inserisci il tuo nome";
+    if (!form.name.trim()) newErrors.name = t("contact.errors.name");
     if (!form.email.trim()) {
-      newErrors.email = "Inserisci la tua email";
+      newErrors.email = t("contact.errors.email");
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = "Email non valida";
+      newErrors.email = t("contact.errors.emailInvalid");
     }
-    if (!form.message.trim()) newErrors.message = "Scrivi un messaggio";
+    if (!form.message.trim()) newErrors.message = t("contact.errors.message");
     return newErrors;
   };
 
@@ -82,11 +84,10 @@ const Contact = () => {
       <div className="container mx-auto px-4 py-24" data-aos="fade-up">
         <div className="mb-12 flex w-full flex-col text-center">
           <h1 className="title-font mb-4 text-2xl font-bold tracking-wide text-white sm:text-3xl">
-            CONTATTAMI
+            {t("contact.title")}
           </h1>
           <p className="mx-auto text-base leading-relaxed lg:w-2/3">
-            Raccontami la tua idea di sito web o web app: ti risponderò appena
-            possibile!
+            {t("contact.subtitle")}
           </p>
         </div>
 
@@ -106,11 +107,11 @@ const Contact = () => {
                   value={form.name}
                   onChange={handleChange}
                   className={inputClass}
-                  placeholder="Nome"
+                  placeholder={t("contact.firstName")}
                   autoComplete="given-name"
                 />
                 <label htmlFor="name" className={labelClass}>
-                  Nome *
+                  {t("contact.firstNameRequired")}
                 </label>
                 {errors.name && (
                   <p className="mt-1 text-xs text-red-400">{errors.name}</p>
@@ -128,11 +129,11 @@ const Contact = () => {
                   value={form.surname}
                   onChange={handleChange}
                   className={inputClass}
-                  placeholder="Cognome"
+                  placeholder={t("contact.lastName")}
                   autoComplete="family-name"
                 />
                 <label htmlFor="surname" className={labelClass}>
-                  Cognome
+                  {t("contact.lastName")}
                 </label>
               </div>
             </div>
@@ -147,11 +148,11 @@ const Contact = () => {
                   value={form.email}
                   onChange={handleChange}
                   className={inputClass}
-                  placeholder="Email"
+                  placeholder={t("contact.email")}
                   autoComplete="email"
                 />
                 <label htmlFor="email" className={labelClass}>
-                  Email *
+                  {t("contact.emailRequired")}
                 </label>
                 {errors.email && (
                   <p className="mt-1 text-xs text-red-400">{errors.email}</p>
@@ -169,11 +170,11 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full rounded-lg border border-gray-700 bg-gray-800 bg-opacity-40 py-2 px-3 text-base leading-8 text-gray-100 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900"
                 >
-                  <option value="">Seleziona un servizio</option>
-                  <option value="Sito Web">Sito Web</option>
-                  <option value="Web App">Web App</option>
-                  <option value="Gestione Social">Gestione Social</option>
-                  <option value="Altro">Altro</option>
+                  <option value="">{t("contact.service")}</option>
+                  <option value="Sito Web">{t("contact.serviceWebsite")}</option>
+                  <option value="Web App">{t("contact.serviceWebapp")}</option>
+                  <option value="Gestione Social">{t("contact.serviceSocial")}</option>
+                  <option value="Altro">{t("contact.serviceOther")}</option>
                 </select>
               </div>
             </div>
@@ -187,10 +188,10 @@ const Contact = () => {
                   value={form.message}
                   onChange={handleChange}
                   className="peer h-32 w-full resize-none rounded-lg border border-gray-700 bg-gray-800 bg-opacity-40 py-2 px-3 text-base leading-6 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900"
-                  placeholder="Messaggio"
+                  placeholder={t("contact.message")}
                 ></textarea>
                 <label htmlFor="message" className={labelClass}>
-                  Messaggio *
+                  {t("contact.messageRequired")}
                 </label>
                 {errors.message && (
                   <p className="mt-1 text-xs text-red-400">{errors.message}</p>
@@ -226,7 +227,7 @@ const Contact = () => {
                     />
                   </svg>
                 )}
-                {status === "sending" ? "INVIO..." : "INVIA"}
+                {status === "sending" ? t("contact.sending") : t("contact.send")}
               </button>
 
               {status === "success" && (
@@ -234,8 +235,7 @@ const Contact = () => {
                   role="status"
                   className="mt-4 rounded-lg border border-green-700 bg-green-900/40 p-3 text-center text-sm text-green-400"
                 >
-                  ✅ Messaggio inviato con successo! Ti risponderò al più
-                  presto.
+                  {t("contact.successMessage")}
                 </p>
               )}
               {status === "error" && (
@@ -243,8 +243,7 @@ const Contact = () => {
                   role="alert"
                   className="mt-4 rounded-lg border border-red-700 bg-red-900/40 p-3 text-center text-sm text-red-400"
                 >
-                  ❌ Ops, qualcosa è andato storto. Riprova tra poco o
-                  scrivimi direttamente a francescofoti44@gmail.com.
+                  {t("contact.errorMessage")}
                 </p>
               )}
             </div>
@@ -266,9 +265,9 @@ const Contact = () => {
                 </a>
               </p>
               <p className="my-5 leading-normal">
-                Brindisi
+                {t("contact.city")}
                 <br />
-                72100
+                {t("contact.zip")}
               </p>
             </div>
           </div>

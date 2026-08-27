@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "./i18n";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./Roots/Root.jsx";
 import NotFound from "./Components/NotFound.jsx";
@@ -11,6 +12,8 @@ const About = lazy(() => import("./Pages/About.jsx"));
 const Projects = lazy(() => import("./Pages/Projects.jsx"));
 const Service = lazy(() => import("./Pages/Service.jsx"));
 const Contact = lazy(() => import("./Pages/Contact.jsx"));
+const GamesHub = lazy(() => import("./Pages/GamesHub.jsx"));
+const GamePage = lazy(() => import("./Pages/GamePage.jsx"));
 
 const PageLoader = () => (
   <div className="flex min-h-[60vh] items-center justify-center bg-gray-900">
@@ -33,6 +36,8 @@ const router = createBrowserRouter([
       { path: "/projects", element: withSuspense(<Projects />) },
       { path: "/service", element: withSuspense(<Service />) },
       { path: "/contact", element: withSuspense(<Contact />) },
+      { path: "/games", element: withSuspense(<GamesHub />) },
+      { path: "/games/:slug", element: withSuspense(<GamePage />) },
     ],
   },
 ]);
